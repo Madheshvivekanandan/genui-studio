@@ -2,7 +2,7 @@
  * evals/cases.ts — the test prompts and what "correct" means for each.
  *
  * Every case: one or more user turns (2 turns = an edit test), then checks
- * written as code. Grouped by Saurabh's three POC goals.
+ * written as code. Grouped by the three POC goals.
  * Add your own cases here — that's how you measure a new model or prompt.
  */
 import type { Page } from "./inspect";

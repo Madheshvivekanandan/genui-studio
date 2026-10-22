@@ -1,0 +1,954 @@
+[
+ {
+  "id": "Y06d82orpdDKf48R",
+  "at": "2026-10-22T12:22:44.718Z",
+  "userText": "Make it dark with a green accent",
+  "requestBody": "{\"id\":\"QW7aAipseS1mjpXm\",\"messages\":[{\"parts\":[{\"type\":\"text\",\"text\":\"Sales dashboard with 3 metrics in a row and a bar chart of monthly revenue\"}],\"id\":\"kz0u5dqg9DXszMqj\",\"role\":\"user\"},{\"id\":\"fFKbcI2OYJbNk3lk\",\"role\":\"assistant\",\"parts\":[{\"type\":\"step-start\"},{\"type\":\"text\",\"text\":\"I'll create a sales dashboard featuring three key metric cards side-by-side in a grid, followed by a monthly revenue bar chart and a detailed breakdown table.\\n\\n\",\"state\":\"done\"},{\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/root\",\"value\":\"page\"}}},{\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/page\",\"value\":{\"type\":\"Page\",\"props\":{\"title\":\"Sales Dashboard\",\"accent\":\"emerald\",\"mode\":\"light\"},\"children\":[\"header\",\"metrics-grid\",\"chart-card\",\"table-card\"]}}}},{\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/header\",\"value\":{\"type\":\"Hero\",\"props\":{\"headline\":\"Q3 Performance Overview\",\"subheadline\":\"Real-time sales analytics and monthly revenue tracking.\",\"primaryCta\":\"Download Report\",\"secondaryCta\":\"Manage Filters\"},\"children\":[]}}}},{\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/metrics-grid\",\"value\":{\"type\":\"Grid\",\"props\":{\"columns\":3},\"children\":[\"metric-1\",\"metric-2\",\"metric-3\"]}}}},{\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/metric-1\",\"value\":{\"type\":\"Metric\",\"props\":{\"label\":\"Total Revenue\",\"value\":\"$128,450\",\"change\":\"+14.2%\",\"trend\":\"up\"},\"children\":[]}}}},{\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/metric-2\",\"value\":{\"type\":\"Metric\",\"props\":{\"label\":\"Active Subscriptions\",\"value\":\"2,431\",\"change\":\"+5.1%\",\"trend\":\"up\"},\"children\":[]}}}},{\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/metric-3\",\"value\":{\"type\":\"Metric\",\"props\":{\"label\":\"Churn Rate\",\"value\":\"1.4%\",\"change\":\"-0.3%\",\"trend\":\"down\"},\"children\":[]}}}},{\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/chart-card\",\"value\":{\"type\":\"Card\",\"props\":{\"title\":\"Monthly Revenue Performance\",\"description\":\"Gross revenue figures for the last 6 months in USD.\"},\"children\":[\"revenue-chart\"]}}}},{\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/revenue-chart\",\"value\":{\"type\":\"BarChart\",\"props\":{\"title\":\"2023 Revenue ($k)\",\"data\":[{\"label\":\"May\",\"value\":18},{\"label\":\"Jun\",\"value\":22},{\"label\":\"Jul\",\"value\":26},{\"label\":\"Aug\",\"value\":24},{\"label\":\"Sep\",\"value\":31},{\"label\":\"Oct\",\"value\":38}]},\"children\":[]}}}},{\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/table-card\",\"value\":{\"type\":\"Card\",\"props\":{\"title\":\"Recent Transactions\",\"description\":\"Latest enterprise deals closed this week.\"},\"children\":[\"recent-table\"]}}}},{\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/recent-table\",\"value\":{\"type\":\"Table\",\"props\":{\"columns\":[\"Client\",\"Plan\",\"Amount\",\"Status\"],\"rows\":[[\"Acme Corp\",\"Enterprise Annual\",\"$24,000\",\"Completed\"],[\"Globex Inc\",\"Team Monthly\",\"$1,200\",\"Pending\"],[\"Stark Industries\",\"Enterprise Annual\",\"$45,000\",\"Completed\"],[\"Wayne Enterprises\",\"Starter Tier\",\"$450\",\"Completed\"]]},\"children\":[]}}}}]},{\"parts\":[{\"type\":\"text\",\"text\":\"Make it dark with a green accent\"}],\"id\":\"vyTmp76xupJdE7md\",\"role\":\"user\"}],\"trigger\":\"submit-message\"}",
+  "sseTotal": 86,
+  "chunkCounts": {
+   "start": 1,
+   "start-step": 1,
+   "text-start": 1,
+   "text-delta": 78,
+   "text-end": 1,
+   "data-spec": 1,
+   "finish-step": 1,
+   "finish": 1,
+   "[DONE]": 1
+  },
+  "parts": [
+   {
+    "type": "step-start"
+   },
+   {
+    "type": "text",
+    "text": "I will update the dashboard theme to dark mode with an emerald green accent.\n\n",
+    "state": "done"
+   },
+   {
+    "type": "data-spec",
+    "data": {
+     "type": "patch",
+     "patch": {
+      "op": "replace",
+      "path": "/elements/page/props",
+      "value": {
+       "title": "Sales Dashboard",
+       "accent": "emerald",
+       "mode": "dark"
+      }
+     }
+    }
+   }
+  ],
+  "versionBefore": 1,
+  "specBefore": {
+   "root": "page",
+   "elements": {
+    "page": {
+     "type": "Page",
+     "props": {
+      "title": "Sales Dashboard",
+      "accent": "emerald",
+      "mode": "light"
+     },
+     "children": [
+      "header",
+      "metrics-grid",
+      "chart-card",
+      "table-card"
+     ]
+    },
+    "header": {
+     "type": "Hero",
+     "props": {
+      "headline": "Q3 Performance Overview",
+      "subheadline": "Real-time sales analytics and monthly revenue tracking.",
+      "primaryCta": "Download Report",
+      "secondaryCta": "Manage Filters"
+     },
+     "children": []
+    },
+    "metrics-grid": {
+     "type": "Grid",
+     "props": {
+      "columns": 3
+     },
+     "children": [
+      "metric-1",
+      "metric-2",
+      "metric-3"
+     ]
+    },
+    "metric-1": {
+     "type": "Metric",
+     "props": {
+      "label": "Total Revenue",
+      "value": "$128,450",
+      "change": "+14.2%",
+      "trend": "up"
+     },
+     "children": []
+    },
+    "metric-2": {
+     "type": "Metric",
+     "props": {
+      "label": "Active Subscriptions",
+      "value": "2,431",
+      "change": "+5.1%",
+      "trend": "up"
+     },
+     "children": []
+    },
+    "metric-3": {
+     "type": "Metric",
+     "props": {
+      "label": "Churn Rate",
+      "value": "1.4%",
+      "change": "-0.3%",
+      "trend": "down"
+     },
+     "children": []
+    },
+    "chart-card": {
+     "type": "Card",
+     "props": {
+      "title": "Monthly Revenue Performance",
+      "description": "Gross revenue figures for the last 6 months in USD."
+     },
+     "children": [
+      "revenue-chart"
+     ]
+    },
+    "revenue-chart": {
+     "type": "BarChart",
+     "props": {
+      "title": "2023 Revenue ($k)",
+      "data": [
+       {
+        "label": "May",
+        "value": 18
+       },
+       {
+        "label": "Jun",
+        "value": 22
+       },
+       {
+        "label": "Jul",
+        "value": 26
+       },
+       {
+        "label": "Aug",
+        "value": 24
+       },
+       {
+        "label": "Sep",
+        "value": 31
+       },
+       {
+        "label": "Oct",
+        "value": 38
+       }
+      ]
+     },
+     "children": []
+    },
+    "table-card": {
+     "type": "Card",
+     "props": {
+      "title": "Recent Transactions",
+      "description": "Latest enterprise deals closed this week."
+     },
+     "children": [
+      "recent-table"
+     ]
+    },
+    "recent-table": {
+     "type": "Table",
+     "props": {
+      "columns": [
+       "Client",
+       "Plan",
+       "Amount",
+       "Status"
+      ],
+      "rows": [
+       [
+        "Acme Corp",
+        "Enterprise Annual",
+        "$24,000",
+        "Completed"
+       ],
+       [
+        "Globex Inc",
+        "Team Monthly",
+        "$1,200",
+        "Pending"
+       ],
+       [
+        "Stark Industries",
+        "Enterprise Annual",
+        "$45,000",
+        "Completed"
+       ],
+       [
+        "Wayne Enterprises",
+        "Starter Tier",
+        "$450",
+        "Completed"
+       ]
+      ]
+     },
+     "children": []
+    }
+   }
+  },
+  "specAfter": {
+   "root": "page",
+   "elements": {
+    "page": {
+     "type": "Page",
+     "props": {
+      "title": "Sales Dashboard",
+      "accent": "emerald",
+      "mode": "dark"
+     },
+     "children": [
+      "header",
+      "metrics-grid",
+      "chart-card",
+      "table-card"
+     ]
+    },
+    "header": {
+     "type": "Hero",
+     "props": {
+      "headline": "Q3 Performance Overview",
+      "subheadline": "Real-time sales analytics and monthly revenue tracking.",
+      "primaryCta": "Download Report",
+      "secondaryCta": "Manage Filters"
+     },
+     "children": []
+    },
+    "metrics-grid": {
+     "type": "Grid",
+     "props": {
+      "columns": 3
+     },
+     "children": [
+      "metric-1",
+      "metric-2",
+      "metric-3"
+     ]
+    },
+    "metric-1": {
+     "type": "Metric",
+     "props": {
+      "label": "Total Revenue",
+      "value": "$128,450",
+      "change": "+14.2%",
+      "trend": "up"
+     },
+     "children": []
+    },
+    "metric-2": {
+     "type": "Metric",
+     "props": {
+      "label": "Active Subscriptions",
+      "value": "2,431",
+      "change": "+5.1%",
+      "trend": "up"
+     },
+     "children": []
+    },
+    "metric-3": {
+     "type": "Metric",
+     "props": {
+      "label": "Churn Rate",
+      "value": "1.4%",
+      "change": "-0.3%",
+      "trend": "down"
+     },
+     "children": []
+    },
+    "chart-card": {
+     "type": "Card",
+     "props": {
+      "title": "Monthly Revenue Performance",
+      "description": "Gross revenue figures for the last 6 months in USD."
+     },
+     "children": [
+      "revenue-chart"
+     ]
+    },
+    "revenue-chart": {
+     "type": "BarChart",
+     "props": {
+      "title": "2023 Revenue ($k)",
+      "data": [
+       {
+        "label": "May",
+        "value": 18
+       },
+       {
+        "label": "Jun",
+        "value": 22
+       },
+       {
+        "label": "Jul",
+        "value": 26
+       },
+       {
+        "label": "Aug",
+        "value": 24
+       },
+       {
+        "label": "Sep",
+        "value": 31
+       },
+       {
+        "label": "Oct",
+        "value": 38
+       }
+      ]
+     },
+     "children": []
+    },
+    "table-card": {
+     "type": "Card",
+     "props": {
+      "title": "Recent Transactions",
+      "description": "Latest enterprise deals closed this week."
+     },
+     "children": [
+      "recent-table"
+     ]
+    },
+    "recent-table": {
+     "type": "Table",
+     "props": {
+      "columns": [
+       "Client",
+       "Plan",
+       "Amount",
+       "Status"
+      ],
+      "rows": [
+       [
+        "Acme Corp",
+        "Enterprise Annual",
+        "$24,000",
+        "Completed"
+       ],
+       [
+        "Globex Inc",
+        "Team Monthly",
+        "$1,200",
+        "Pending"
+       ],
+       [
+        "Stark Industries",
+        "Enterprise Annual",
+        "$45,000",
+        "Completed"
+       ],
+       [
+        "Wayne Enterprises",
+        "Starter Tier",
+        "$450",
+        "Completed"
+       ]
+      ]
+     },
+     "children": []
+    }
+   }
+  },
+  "problems": [],
+  "server": {
+   "model": "gemini-flash-lite-latest",
+   "durationMs": 8123,
+   "instructionsChars": 19405,
+   "editMode": true,
+   "sentPrompt": "CURRENT UI STATE (already loaded, DO NOT recreate existing elements):\n```\n{\n  \"root\": \"page\",\n  \"elements\": {\n    \"page\": {\n      \"type\": \"Page\",\n      \"props\": {\n        \"title\": \"Sales Dashboard\",\n        \"accent\": \"emerald\",\n        \"mode\": \"light\"\n      },\n      \"children\": [\n        \"header\",\n        \"metrics-grid\",\n        \"chart-card\",\n        \"table-card\"\n      ]\n    },\n    \"header\": {\n      \"type\": \"Hero\",\n      \"props\": {\n        \"headline\": \"Q3 Performance Overview\",\n        \"subheadline\": \"Real-time sales analytics and monthly revenue tracking.\",\n        \"primaryCta\": \"Download Report\",\n        \"secondaryCta\": \"Manage Filters\"\n      },\n      \"children\": []\n    },\n    \"metrics-grid\": {\n      \"type\": \"Grid\",\n      \"props\": {\n        \"columns\": 3\n      },\n      \"children\": [\n        \"metric-1\",\n        \"metric-2\",\n        \"metric-3\"\n      ]\n    },\n    \"metric-1\": {\n      \"type\": \"Metric\",\n      \"props\": {\n        \"label\": \"Total Revenue\",\n        \"value\": \"$128,450\",\n        \"change\": \"+14.2%\",\n        \"trend\": \"up\"\n      },\n      \"children\": []\n    },\n    \"metric-2\": {\n      \"type\": \"Metric\",\n      \"props\": {\n        \"label\": \"Active Subscriptions\",\n        \"value\": \"2,431\",\n        \"change\": \"+5.1%\",\n        \"trend\": \"up\"\n      },\n      \"children\": []\n    },\n    \"metric-3\": {\n      \"type\": \"Metric\",\n      \"props\": {\n        \"label\": \"Churn Rate\",\n        \"value\": \"1.4%\",\n        \"change\": \"-0.3%\",\n        \"trend\": \"down\"\n      },\n      \"children\": []\n    },\n    \"chart-card\": {\n      \"type\": \"Card\",\n      \"props\": {\n        \"title\": \"Monthly Revenue Performance\",\n        \"description\": \"Gross revenue figures for the last 6 months in USD.\"\n      },\n      \"children\": [\n        \"revenue-chart\"\n      ]\n    },\n    \"revenue-chart\": {\n      \"type\": \"BarChart\",\n      \"props\": {\n        \"title\": \"2023 Revenue ($k)\",\n        \"data\": [\n          {\n            \"label\": \"May\",\n            \"value\": 18\n          },\n          {\n            \"label\": \"Jun\",\n            \"value\": 22\n          },\n          {\n            \"label\": \"Jul\",\n            \"value\": 26\n          },\n          {\n            \"label\": \"Aug\",\n            \"value\": 24\n          },\n          {\n            \"label\": \"Sep\",\n            \"value\": 31\n          },\n          {\n            \"label\": \"Oct\",\n            \"value\": 38\n          }\n        ]\n      },\n      \"children\": []\n    },\n    \"table-card\": {\n      \"type\": \"Card\",\n      \"props\": {\n        \"title\": \"Recent Transactions\",\n        \"description\": \"Latest enterprise deals closed this week.\"\n      },\n      \"children\": [\n        \"recent-table\"\n      ]\n    },\n    \"recent-table\": {\n      \"type\": \"Table\",\n      \"props\": {\n        \"columns\": [\n          \"Client\",\n          \"Plan\",\n          \"Amount\",\n          \"Status\"\n        ],\n        \"rows\": [\n          [\n            \"Acme Corp\",\n            \"Enterprise Annual\",\n            \"$24,000\",\n            \"Completed\"\n          ],\n          [\n            \"Globex Inc\",\n            \"Team Monthly\",\n            \"$1,200\",\n            \"Pending\"\n          ],\n          [\n            \"Stark Industries\",\n            \"Enterprise Annual\",\n            \"$45,000\",\n            \"Completed\"\n          ],\n          [\n            \"Wayne Enterprises\",\n            \"Starter Tier\",\n            \"$450\",\n            \"Completed\"\n          ]\n        ]\n      },\n      \"children\": []\n    }\n  }\n}\n```\n\nUSER REQUEST: Make it dark with a green accent\n\nOutput ONLY the JSON Patch lines needed for the change.",
+   "rawOutput": "I will update the dashboard theme to dark mode with an emerald green accent.\n\n```spec\n{\"op\":\"replace\",\"path\":\"/elements/page/props\",\"value\":{\"title\":\"Sales Dashboard\",\"accent\":\"emerald\",\"mode\":\"dark\"}}\n```",
+   "llmCalls": [
+    {
+     "step": 0,
+     "provider": "google.generative-ai",
+     "modelId": "gemini-flash-lite-latest",
+     "finishReason": "stop",
+     "toolCalls": 0,
+     "inputTokens": 6187,
+     "outputTokens": 50,
+     "requestBody": {
+      "generationConfig": {},
+      "contents": [
+       {
+        "role": "user",
+        "parts": [
+         {
+          "text": "Sales dashboard with 3 metrics in a row and a bar chart of monthly revenue"
+         }
+        ]
+       },
+       {
+        "role": "model",
+        "parts": [
+         {
+          "text": "I'll create a sales dashboard featuring three key metric cards side-by-side in a grid, followed by a monthly revenue bar chart and a detailed breakdown table.\n\n"
+         }
+        ]
+       },
+       {
+        "role": "user",
+        "parts": [
+         {
+          "text": "CURRENT UI STATE (already loaded, DO NOT recreate existing elements):\n```\n{\n  \"root\": \"page\",\n  \"elements\": {\n    \"page\": {\n      \"type\": \"Page\",\n      \"props\": {\n        \"title\": \"Sales Dashboard\",\n        \"accent\": \"emerald\",\n        \"mode\": \"light\"\n      },\n      \"children\": [\n        \"header\",\n        \"metrics-grid\",\n        \"chart-card\",\n        \"table-card\"\n      ]\n    },\n    \"header\": {\n      \"type\": \"Hero\",\n      \"props\": {\n        \"headline\": \"Q3 Performance Overview\",\n        \"subheadline\": \"Real-time sales analytics and monthly revenue tracking.\",\n        \"primaryCta\": \"Download Report\",\n        \"secondaryCta\": \"Manage Filters\"\n      },\n      \"children\": []\n    },\n    \"metrics-grid\": {\n      \"type\": \"Grid\",\n      \"props\": {\n        \"columns\": 3\n      },\n      \"children\": [\n        \"metric-1\",\n        \"metric-2\",\n        \"metric-3\"\n      ]\n    },\n    \"metric-1\": {\n      \"type\": \"Metric\",\n      \"props\": {\n        \"label\": \"Total Revenue\",\n        \"value\": \"$128,450\",\n        \"change\": \"+14.2%\",\n        \"trend\": \"up\"\n      },\n      \"children\": []\n    },\n    \"metric-2\": {\n      \"type\": \"Metric\",\n      \"props\": {\n        \"label\": \"Active Subscriptions\",\n        \"value\": \"2,431\",\n        \"change\": \"+5.1%\",\n        \"trend\": \"up\"\n      },\n      \"children\": []\n    },\n    \"metric-3\": {\n      \"type\": \"Metric\",\n      \"props\": {\n        \"label\": \"Churn Rate\",\n        \"value\": \"1.4%\",\n        \"change\": \"-0.3%\",\n        \"trend\": \"down\"\n      },\n      \"children\": []\n    },\n    \"chart-card\": {\n      \"type\": \"Card\",\n      \"props\": {\n        \"title\": \"Monthly Revenue Performance\",\n        \"description\": \"Gross revenue figures for the last 6 months in USD.\"\n      },\n      \"children\": [\n        \"revenue-chart\"\n      ]\n    },\n    \"revenue-chart\": {\n      \"type\": \"BarChart\",\n      \"props\": {\n        \"title\": \"2023 Revenue ($k)\",\n        \"data\": [\n          {\n            \"label\": \"May\",\n            \"value\": 18\n          },\n          {\n            \"label\": \"Jun\",\n            \"value\": 22\n          },\n          {\n            \"label\": \"Jul\",\n            \"value\": 26\n          },\n          {\n            \"label\": \"Aug\",\n            \"value\": 24\n          },\n          {\n            \"label\": \"Sep\",\n            \"value\": 31\n          },\n          {\n            \"label\": \"Oct\",\n            \"value\": 38\n          }\n        ]\n      },\n      \"children\": []\n    },\n    \"table-card\": {\n      \"type\": \"Card\",\n      \"props\": {\n        \"title\": \"Recent Transactions\",\n        \"description\": \"Latest enterprise deals closed this week.\"\n      },\n      \"children\": [\n        \"recent-table\"\n      ]\n    },\n    \"recent-table\": {\n      \"type\": \"Table\",\n      \"props\": {\n        \"columns\": [\n          \"Client\",\n          \"Plan\",\n          \"Amount\",\n          \"Status\"\n        ],\n        \"rows\": [\n          [\n            \"Acme Corp\",\n            \"Enterprise Annual\",\n            \"$24,000\",\n            \"Completed\"\n          ],\n          [\n            \"Globex Inc\",\n            \"Team Monthly\",\n            \"$1,200\",\n            \"Pending\"\n          ],\n          [\n            \"Stark Industries\",\n            \"Enterprise Annual\",\n            \"$45,000\",\n            \"Completed\"\n          ],\n          [\n            \"Wayne Enterprises\",\n            \"Starter Tier\",\n            \"$450\",\n            \"Completed\"\n          ]\n        ]\n      },\n      \"children\": []\n    }\n  }\n}\n```\n\nUSER REQUEST: Make it dark with a green accent\n\nOutput ONLY the JSON Patch lines needed for the change."
+         }
+        ]
+       }
+      ],
+      "systemInstruction": {
+       "parts": [
+        {
+         "text": "[19405 characters: the system instructions]"
+        }
+       ]
+      }
+     }
+    }
+   ]
+  },
+  "wire": [
+   "data: {\"type\":\"start\"}",
+   "data: {\"type\":\"start-step\"}",
+   "data: {\"type\":\"text-start\",\"id\":\"0\"}",
+   "data: {\"type\":\"text-delta\", …}   ← 78 chunks: \"I will update the dashboard theme to dark mode with an emerald green accent.\n\n\"",
+   "data: {\"type\":\"text-end\",\"id\":\"0\"}",
+   "data: {\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"replace\",\"path\":\"/elements/page/props\",\"value\":{\"title\":\"Sales Dashboard\",\"accent\":\"emerald\",\"mode\":\"dark\"}}}}",
+   "data: {\"type\":\"finish-step\"}",
+   "data: {\"type\":\"finish\",\"finishReason\":\"stop\",\"messageMetadata\":{\"trace\":{\"model\":\"gemini-flash-lite-latest\",\"durationMs\":8123,\"instructionsChars\":19405,\"editMode\":true,\"sentPrompt\":\"CURRENT UI STATE (already loaded, DO NOT recreate existing elements):\\n```\\n{\\n  \\\"root\\\": \\\"page\\\",\\n  \\\"elements\\\": …",
+   "data: [DONE]"
+  ]
+ },
+ {
+  "id": "fFKbcI2OYJbNk3lk",
+  "at": "2026-10-22T12:22:13.711Z",
+  "userText": "Sales dashboard with 3 metrics in a row and a bar chart of monthly revenue",
+  "requestBody": "{\"id\":\"QW7aAipseS1mjpXm\",\"messages\":[{\"parts\":[{\"type\":\"text\",\"text\":\"Sales dashboard with 3 metrics in a row and a bar chart of monthly revenue\"}],\"id\":\"kz0u5dqg9DXszMqj\",\"role\":\"user\"}],\"trigger\":\"submit-message\"}",
+  "sseTotal": 178,
+  "chunkCounts": {
+   "start": 1,
+   "start-step": 1,
+   "text-start": 1,
+   "text-delta": 160,
+   "text-end": 1,
+   "data-spec": 11,
+   "finish-step": 1,
+   "finish": 1,
+   "[DONE]": 1
+  },
+  "parts": [
+   {
+    "type": "step-start"
+   },
+   {
+    "type": "text",
+    "text": "I'll create a sales dashboard featuring three key metric cards side-by-side in a grid, followed by a monthly revenue bar chart and a detailed breakdown table.\n\n",
+    "state": "done"
+   },
+   {
+    "type": "data-spec",
+    "data": {
+     "type": "patch",
+     "patch": {
+      "op": "add",
+      "path": "/root",
+      "value": "page"
+     }
+    }
+   },
+   {
+    "type": "data-spec",
+    "data": {
+     "type": "patch",
+     "patch": {
+      "op": "add",
+      "path": "/elements/page",
+      "value": {
+       "type": "Page",
+       "props": {
+        "title": "Sales Dashboard",
+        "accent": "emerald",
+        "mode": "light"
+       },
+       "children": [
+        "header",
+        "metrics-grid",
+        "chart-card",
+        "table-card"
+       ]
+      }
+     }
+    }
+   },
+   {
+    "type": "data-spec",
+    "data": {
+     "type": "patch",
+     "patch": {
+      "op": "add",
+      "path": "/elements/header",
+      "value": {
+       "type": "Hero",
+       "props": {
+        "headline": "Q3 Performance Overview",
+        "subheadline": "Real-time sales analytics and monthly revenue tracking.",
+        "primaryCta": "Download Report",
+        "secondaryCta": "Manage Filters"
+       },
+       "children": []
+      }
+     }
+    }
+   },
+   {
+    "type": "data-spec",
+    "data": {
+     "type": "patch",
+     "patch": {
+      "op": "add",
+      "path": "/elements/metrics-grid",
+      "value": {
+       "type": "Grid",
+       "props": {
+        "columns": 3
+       },
+       "children": [
+        "metric-1",
+        "metric-2",
+        "metric-3"
+       ]
+      }
+     }
+    }
+   },
+   {
+    "type": "data-spec",
+    "data": {
+     "type": "patch",
+     "patch": {
+      "op": "add",
+      "path": "/elements/metric-1",
+      "value": {
+       "type": "Metric",
+       "props": {
+        "label": "Total Revenue",
+        "value": "$128,450",
+        "change": "+14.2%",
+        "trend": "up"
+       },
+       "children": []
+      }
+     }
+    }
+   },
+   {
+    "type": "data-spec",
+    "data": {
+     "type": "patch",
+     "patch": {
+      "op": "add",
+      "path": "/elements/metric-2",
+      "value": {
+       "type": "Metric",
+       "props": {
+        "label": "Active Subscriptions",
+        "value": "2,431",
+        "change": "+5.1%",
+        "trend": "up"
+       },
+       "children": []
+      }
+     }
+    }
+   },
+   {
+    "type": "data-spec",
+    "data": {
+     "type": "patch",
+     "patch": {
+      "op": "add",
+      "path": "/elements/metric-3",
+      "value": {
+       "type": "Metric",
+       "props": {
+        "label": "Churn Rate",
+        "value": "1.4%",
+        "change": "-0.3%",
+        "trend": "down"
+       },
+       "children": []
+      }
+     }
+    }
+   },
+   {
+    "type": "data-spec",
+    "data": {
+     "type": "patch",
+     "patch": {
+      "op": "add",
+      "path": "/elements/chart-card",
+      "value": {
+       "type": "Card",
+       "props": {
+        "title": "Monthly Revenue Performance",
+        "description": "Gross revenue figures for the last 6 months in USD."
+       },
+       "children": [
+        "revenue-chart"
+       ]
+      }
+     }
+    }
+   },
+   {
+    "type": "data-spec",
+    "data": {
+     "type": "patch",
+     "patch": {
+      "op": "add",
+      "path": "/elements/revenue-chart",
+      "value": {
+       "type": "BarChart",
+       "props": {
+        "title": "2023 Revenue ($k)",
+        "data": [
+         {
+          "label": "May",
+          "value": 18
+         },
+         {
+          "label": "Jun",
+          "value": 22
+         },
+         {
+          "label": "Jul",
+          "value": 26
+         },
+         {
+          "label": "Aug",
+          "value": 24
+         },
+         {
+          "label": "Sep",
+          "value": 31
+         },
+         {
+          "label": "Oct",
+          "value": 38
+         }
+        ]
+       },
+       "children": []
+      }
+     }
+    }
+   },
+   {
+    "type": "data-spec",
+    "data": {
+     "type": "patch",
+     "patch": {
+      "op": "add",
+      "path": "/elements/table-card",
+      "value": {
+       "type": "Card",
+       "props": {
+        "title": "Recent Transactions",
+        "description": "Latest enterprise deals closed this week."
+       },
+       "children": [
+        "recent-table"
+       ]
+      }
+     }
+    }
+   },
+   {
+    "type": "data-spec",
+    "data": {
+     "type": "patch",
+     "patch": {
+      "op": "add",
+      "path": "/elements/recent-table",
+      "value": {
+       "type": "Table",
+       "props": {
+        "columns": [
+         "Client",
+         "Plan",
+         "Amount",
+         "Status"
+        ],
+        "rows": [
+         [
+          "Acme Corp",
+          "Enterprise Annual",
+          "$24,000",
+          "Completed"
+         ],
+         [
+          "Globex Inc",
+          "Team Monthly",
+          "$1,200",
+          "Pending"
+         ],
+         [
+          "Stark Industries",
+          "Enterprise Annual",
+          "$45,000",
+          "Completed"
+         ],
+         [
+          "Wayne Enterprises",
+          "Starter Tier",
+          "$450",
+          "Completed"
+         ]
+        ]
+       },
+       "children": []
+      }
+     }
+    }
+   }
+  ],
+  "versionBefore": 0,
+  "specBefore": null,
+  "specAfter": {
+   "root": "page",
+   "elements": {
+    "page": {
+     "type": "Page",
+     "props": {
+      "title": "Sales Dashboard",
+      "accent": "emerald",
+      "mode": "light"
+     },
+     "children": [
+      "header",
+      "metrics-grid",
+      "chart-card",
+      "table-card"
+     ]
+    },
+    "header": {
+     "type": "Hero",
+     "props": {
+      "headline": "Q3 Performance Overview",
+      "subheadline": "Real-time sales analytics and monthly revenue tracking.",
+      "primaryCta": "Download Report",
+      "secondaryCta": "Manage Filters"
+     },
+     "children": []
+    },
+    "metrics-grid": {
+     "type": "Grid",
+     "props": {
+      "columns": 3
+     },
+     "children": [
+      "metric-1",
+      "metric-2",
+      "metric-3"
+     ]
+    },
+    "metric-1": {
+     "type": "Metric",
+     "props": {
+      "label": "Total Revenue",
+      "value": "$128,450",
+      "change": "+14.2%",
+      "trend": "up"
+     },
+     "children": []
+    },
+    "metric-2": {
+     "type": "Metric",
+     "props": {
+      "label": "Active Subscriptions",
+      "value": "2,431",
+      "change": "+5.1%",
+      "trend": "up"
+     },
+     "children": []
+    },
+    "metric-3": {
+     "type": "Metric",
+     "props": {
+      "label": "Churn Rate",
+      "value": "1.4%",
+      "change": "-0.3%",
+      "trend": "down"
+     },
+     "children": []
+    },
+    "chart-card": {
+     "type": "Card",
+     "props": {
+      "title": "Monthly Revenue Performance",
+      "description": "Gross revenue figures for the last 6 months in USD."
+     },
+     "children": [
+      "revenue-chart"
+     ]
+    },
+    "revenue-chart": {
+     "type": "BarChart",
+     "props": {
+      "title": "2023 Revenue ($k)",
+      "data": [
+       {
+        "label": "May",
+        "value": 18
+       },
+       {
+        "label": "Jun",
+        "value": 22
+       },
+       {
+        "label": "Jul",
+        "value": 26
+       },
+       {
+        "label": "Aug",
+        "value": 24
+       },
+       {
+        "label": "Sep",
+        "value": 31
+       },
+       {
+        "label": "Oct",
+        "value": 38
+       }
+      ]
+     },
+     "children": []
+    },
+    "table-card": {
+     "type": "Card",
+     "props": {
+      "title": "Recent Transactions",
+      "description": "Latest enterprise deals closed this week."
+     },
+     "children": [
+      "recent-table"
+     ]
+    },
+    "recent-table": {
+     "type": "Table",
+     "props": {
+      "columns": [
+       "Client",
+       "Plan",
+       "Amount",
+       "Status"
+      ],
+      "rows": [
+       [
+        "Acme Corp",
+        "Enterprise Annual",
+        "$24,000",
+        "Completed"
+       ],
+       [
+        "Globex Inc",
+        "Team Monthly",
+        "$1,200",
+        "Pending"
+       ],
+       [
+        "Stark Industries",
+        "Enterprise Annual",
+        "$45,000",
+        "Completed"
+       ],
+       [
+        "Wayne Enterprises",
+        "Starter Tier",
+        "$450",
+        "Completed"
+       ]
+      ]
+     },
+     "children": []
+    }
+   }
+  },
+  "problems": [],
+  "server": {
+   "model": "gemini-flash-lite-latest",
+   "durationMs": 28740,
+   "instructionsChars": 19405,
+   "editMode": false,
+   "sentPrompt": "Sales dashboard with 3 metrics in a row and a bar chart of monthly revenue",
+   "rawOutput": "I'll create a sales dashboard featuring three key metric cards side-by-side in a grid, followed by a monthly revenue bar chart and a detailed breakdown table.\n\n```spec\n{\"op\":\"add\",\"path\":\"/root\",\"value\":\"page\"}\n{\"op\":\"add\",\"path\":\"/elements/page\",\"value\":{\"type\":\"Page\",\"props\":{\"title\":\"Sales Dashboard\",\"accent\":\"emerald\",\"mode\":\"light\"},\"children\":[\"header\",\"metrics-grid\",\"chart-card\",\"table-card\"]}}\n{\"op\":\"add\",\"path\":\"/elements/header\",\"value\":{\"type\":\"Hero\",\"props\":{\"headline\":\"Q3 Performance Overview\",\"subheadline\":\"Real-time sales analytics and monthly revenue tracking.\",\"primaryCta\":\"Download Report\",\"secondaryCta\":\"Manage Filters\"},\"children\":[]}}\n{\"op\":\"add\",\"path\":\"/elements/metrics-grid\",\"value\":{\"type\":\"Grid\",\"props\":{\"columns\":3},\"children\":[\"metric-1\",\"metric-2\",\"metric-3\"]}}\n{\"op\":\"add\",\"path\":\"/elements/metric-1\",\"value\":{\"type\":\"Metric\",\"props\":{\"label\":\"Total Revenue\",\"value\":\"$128,450\",\"change\":\"+14.2%\",\"trend\":\"up\"},\"children\":[]}}\n{\"op\":\"add\",\"path\":\"/elements/metric-2\",\"value\":{\"type\":\"Metric\",\"props\":{\"label\":\"Active Subscriptions\",\"value\":\"2,431\",\"change\":\"+5.1%\",\"trend\":\"up\"},\"children\":[]}}\n{\"op\":\"add\",\"path\":\"/elements/metric-3\",\"value\":{\"type\":\"Metric\",\"props\":{\"label\":\"Churn Rate\",\"value\":\"1.4%\",\"change\":\"-0.3%\",\"trend\":\"down\"},\"children\":[]}}\n{\"op\":\"add\",\"path\":\"/elements/chart-card\",\"value\":{\"type\":\"Card\",\"props\":{\"title\":\"Monthly Revenue Performance\",\"description\":\"Gross revenue figures for the last 6 months in USD.\"},\"children\":[\"revenue-chart\"]}}\n{\"op\":\"add\",\"path\":\"/elements/revenue-chart\",\"value\":{\"type\":\"BarChart\",\"props\":{\"title\":\"2023 Revenue ($k)\",\"data\":[{\"label\":\"May\",\"value\":18},{\"label\":\"Jun\",\"value\":22},{\"label\":\"Jul\",\"value\":26},{\"label\":\"Aug\",\"value\":24},{\"label\":\"Sep\",\"value\":31},{\"label\":\"Oct\",\"value\":38}]},\"children\":[]}}\n{\"op\":\"add\",\"path\":\"/elements/table-card\",\"value\":{\"type\":\"Card\",\"props\":{\"title\":\"Recent Transactions\",\"description\":\"Latest enterprise deals closed this week.\"},\"children\":[\"recent-table\"]}}\n{\"op\":\"add\",\"path\":\"/elements/recent-table\",\"value\":{\"type\":\"Table\",\"props\":{\"columns\":[\"Client\",\"Plan\",\"Amount\",\"Status\"],\"rows\":[[\"Acme Corp\",\"Enterprise Annual\",\"$24,000\",\"Completed\"],[\"Globex Inc\",\"Team Monthly\",\"$1,200\",\"Pending\"],[\"Stark Industries\",\"Enterprise Annual\",\"$45,000\",\"Completed\"],[\"Wayne Enterprises\",\"Starter Tier\",\"$450\",\"Completed\"]]},\"children\":[]}}\n```",
+   "llmCalls": [
+    {
+     "step": 0,
+     "provider": "google.generative-ai",
+     "modelId": "gemini-flash-lite-latest",
+     "finishReason": "stop",
+     "toolCalls": 0,
+     "inputTokens": 5104,
+     "outputTokens": 664,
+     "requestBody": {
+      "generationConfig": {},
+      "contents": [
+       {
+        "role": "user",
+        "parts": [
+         {
+          "text": "Sales dashboard with 3 metrics in a row and a bar chart of monthly revenue"
+         }
+        ]
+       }
+      ],
+      "systemInstruction": {
+       "parts": [
+        {
+         "text": "[19405 characters: the system instructions]"
+        }
+       ]
+      }
+     }
+    }
+   ]
+  },
+  "wire": [
+   "data: {\"type\":\"start\"}",
+   "data: {\"type\":\"start-step\"}",
+   "data: {\"type\":\"text-start\",\"id\":\"0\"}",
+   "data: {\"type\":\"text-delta\", …}   ← 160 chunks: \"I'll create a sales dashboard featuring three key metric cards side-by-side in a…\"",
+   "data: {\"type\":\"text-end\",\"id\":\"0\"}",
+   "data: {\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/root\",\"value\":\"page\"}}}",
+   "data: {\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/page\",\"value\":{\"type\":\"Page\",\"props\":{\"title\":\"Sales Dashboard\",\"accent\":\"emerald\",\"mode\":\"light\"},\"children\":[\"header\",\"metrics-grid\",\"chart-card\",\"table-card\"]}}}}",
+   "data: {\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/header\",\"value\":{\"type\":\"Hero\",\"props\":{\"headline\":\"Q3 Performance Overview\",\"subheadline\":\"Real-time sales analytics and monthly revenue tracking.\",\"primaryCta\":\"Download Report\",\"secondaryCta\":\"Manage Filters\"},…",
+   "data: {\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/metrics-grid\",\"value\":{\"type\":\"Grid\",\"props\":{\"columns\":3},\"children\":[\"metric-1\",\"metric-2\",\"metric-3\"]}}}}",
+   "data: {\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/metric-1\",\"value\":{\"type\":\"Metric\",\"props\":{\"label\":\"Total Revenue\",\"value\":\"$128,450\",\"change\":\"+14.2%\",\"trend\":\"up\"},\"children\":[]}}}}",
+   "data: {\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/metric-2\",\"value\":{\"type\":\"Metric\",\"props\":{\"label\":\"Active Subscriptions\",\"value\":\"2,431\",\"change\":\"+5.1%\",\"trend\":\"up\"},\"children\":[]}}}}",
+   "data: {\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/metric-3\",\"value\":{\"type\":\"Metric\",\"props\":{\"label\":\"Churn Rate\",\"value\":\"1.4%\",\"change\":\"-0.3%\",\"trend\":\"down\"},\"children\":[]}}}}",
+   "data: {\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/chart-card\",\"value\":{\"type\":\"Card\",\"props\":{\"title\":\"Monthly Revenue Performance\",\"description\":\"Gross revenue figures for the last 6 months in USD.\"},\"children\":[\"revenue-chart\"]}}}}",
+   "data: {\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/revenue-chart\",\"value\":{\"type\":\"BarChart\",\"props\":{\"title\":\"2023 Revenue ($k)\",\"data\":[{\"label\":\"May\",\"value\":18},{\"label\":\"Jun\",\"value\":22},{\"label\":\"Jul\",\"value\":26},{\"label\":\"Aug\",\"value\":24},{\"label\":\"Sep\",\"va…",
+   "data: {\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/table-card\",\"value\":{\"type\":\"Card\",\"props\":{\"title\":\"Recent Transactions\",\"description\":\"Latest enterprise deals closed this week.\"},\"children\":[\"recent-table\"]}}}}",
+   "data: {\"type\":\"data-spec\",\"data\":{\"type\":\"patch\",\"patch\":{\"op\":\"add\",\"path\":\"/elements/recent-table\",\"value\":{\"type\":\"Table\",\"props\":{\"columns\":[\"Client\",\"Plan\",\"Amount\",\"Status\"],\"rows\":[[\"Acme Corp\",\"Enterprise Annual\",\"$24,000\",\"Completed\"],[\"Globex Inc\",\"Team Monthly\",\"$1,200\",\"Pending\"],[\"Stark…",
+   "data: {\"type\":\"finish-step\"}",
+   "data: {\"type\":\"finish\",\"finishReason\":\"stop\",\"messageMetadata\":{\"trace\":{\"model\":\"gemini-flash-lite-latest\",\"durationMs\":28740,\"instructionsChars\":19405,\"editMode\":false,\"sentPrompt\":\"Sales dashboard with 3 metrics in a row and a bar chart of monthly revenue\",\"rawOutput\":\"I'll create a sales dashboa…",
+   "data: [DONE]"
+  ]
+ }
+]

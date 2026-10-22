@@ -4,6 +4,8 @@ A proof of concept for **Generative UI**: an AI agent builds web pages from plai
 
 Built with the **Vercel AI SDK** (LLM calls and streaming) and **json-render** by Vercel Labs (component catalog, UI JSON format and renderer) on **Next.js 16**. The default model is Google Gemini, on the free tier.
 
+**Slides:** [GenUI POC Walkthrough (PDF, 10 slides)](docs/GenUI-POC-Walkthrough.pdf): the three cases, the approach, the evidence for each case, and one request end to end.
+
 ---
 
 ## What it demonstrates
@@ -124,6 +126,8 @@ evals/                        instruction-following test suite
 ├── cases.ts                  test prompts and their checks (add cases here)
 ├── inspect.ts                helpers to query a built page
 └── run.ts                    runner; results go to evals/results/ (git-ignored)
+docs/
+└── GenUI-POC-Walkthrough.pdf the slide deck
 ```
 
 ---

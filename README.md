@@ -19,7 +19,29 @@ Built with the **Vercel AI SDK** (LLM calls and streaming) and **json-render** b
 **Screens**
 
 - **`/`**: chat on the left, live canvas on the right (Preview / JSON tabs, version history `v1 v2 …`, validation badge).
-- **`/how-it-works`**: replays the last request in 13 steps with the real data: what was sent, what the LLM received and returned, the stream, the patches, the final JSON, and how it maps to components.
+- **`/how-it-works`**: a step-by-step replay of your last request (see below).
+
+---
+
+## See it step by step: the How it works page
+
+Open **How it works ↗** from the top of the chat (or go to `/how-it-works`). It replays your **last real request** in 13 steps and shows the **actual data** at each one: what was sent, what the LLM received and returned, the stream, the patches, the final JSON, and how it maps to components. It also explains why the Vercel AI SDK was chosen. Before you send anything, it shows a recorded sample request.
+
+| # | Step | Runs on | Code |
+|---|---|---|---|
+| 1 | You type the prompt | Browser | `src/components/ChatScreen.tsx` |
+| 2 | `useChat` sends the whole conversation | Browser | `src/components/ChatScreen.tsx` |
+| 3 | The route receives it | Server | `src/app/api/chat/route.ts` |
+| 4 | The current page is attached (edits) | Server | `src/server/agent.ts`, `src/lib/spec.ts` |
+| 5 | Instructions are generated from the catalog | Server | `src/lib/catalog.ts` |
+| 6 | One HTTP call to Google (`streamText`) | Server | `src/server/agent.ts` |
+| 7 | The LLM generates the answer | Gemini | |
+| 8 | The raw text the LLM returned | Gemini → Server | `src/server/agent.ts` |
+| 9 | The stream is sorted into text and UI patches (`pipeJsonRender`) | Server | `src/server/agent.ts` |
+| 10 | `useChat` rebuilds the message from the chunks | Browser | `src/components/ChatScreen.tsx` |
+| 11 | Patches are applied → page JSON | Browser | `src/lib/spec.ts` |
+| 12 | Validation | Browser | `src/lib/validate.ts` |
+| 13 | JSON is mapped to React components | Browser | `src/components/Canvas.tsx`, `src/components/registry.tsx` |
 
 ---
 

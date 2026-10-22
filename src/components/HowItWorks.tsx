@@ -30,7 +30,7 @@ export function HowItWorks() {
   const traces = stored.length ? stored : (sampleTraces as unknown as Trace[]);
   const [index, setIndex] = useState(0);
   const t = traces[Math.min(index, traces.length - 1)];
-  const active = useActiveStep(13);
+  const active = useActiveSection(13);
 
   if (!t) return <p className="p-10">No trace yet: send a prompt in the app first.</p>;
 
@@ -102,7 +102,7 @@ export function HowItWorks() {
               <span className="absolute top-3 bottom-3 left-[0.95rem] w-px bg-white/10" />
               {steps.map((st, i) => {
                 const n = i + 1;
-                const on = n === active;
+                const on = `step-${n}` === active;
                 return (
                   <li key={n}>
                     <a
@@ -118,6 +118,17 @@ export function HowItWorks() {
                 );
               })}
             </ol>
+            <a
+              href="#why-ai-sdk"
+              className={`mt-2 flex items-center gap-3 rounded-lg px-1.5 py-1.5 text-sm text-emerald-300 ${active === "why-ai-sdk" ? "bg-white/10" : "hover:bg-white/5"}`}
+            >
+              <span
+                className={`flex size-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] font-bold text-slate-950 ${active === "why-ai-sdk" ? "ring-4 ring-emerald-500/40" : ""}`}
+              >
+                ?
+              </span>
+              Why the Vercel AI SDK
+            </a>
             <div className="mt-4 flex flex-wrap gap-2 border-t border-white/10 pt-3 text-xs">
               {(Object.keys(LANES) as Lane[]).map((l) => (
                 <span key={l} className="flex items-center gap-1.5">
@@ -132,6 +143,7 @@ export function HowItWorks() {
           {steps.map((st, i) => (
             <StepCard key={i} n={i + 1} step={st} />
           ))}
+          <WhyAiSdk />
         </main>
       </div>
     </div>
@@ -329,6 +341,175 @@ function buildSteps(t: Trace, patchCount: number): Step[] {
 }
 
 /* ================================================================== */
+/* Why the Vercel AI SDK                                               */
+/* ================================================================== */
+
+const SDK_BENEFITS: { title: string; steps: number[]; what: ReactNode; without: string }[] = [
+  {
+    title: "One API for every model",
+    steps: [6],
+    what: (
+      <>
+        <Mono>google(&quot;gemini-…&quot;)</Mono> today; Claude or GPT is a one-line change. The SDK translates to each provider&apos;s format.
+      </>
+    ),
+    without: "Rewrite the request and response handling for every provider.",
+  },
+  {
+    title: "Streaming, end to end",
+    steps: [6, 9, 10],
+    what: (
+      <>
+        <Mono>streamText</Mono> → <Mono>toUIMessageStream</Mono> → <Mono>useChat</Mono>: words and UI patches appear while the model is still
+        writing.
+      </>
+    ),
+    without: "Parse the provider's stream, invent a wire format, and decode it again in React.",
+  },
+  {
+    title: "Chat state in React",
+    steps: [1, 2, 10],
+    what: (
+      <>
+        <Mono>useChat</Mono> keeps the messages, status (submitted / streaming / ready) and errors, and sends the conversation.
+      </>
+    ),
+    without: "Hand-written state management, request code and error handling.",
+  },
+  {
+    title: "Custom data parts",
+    steps: [9, 10],
+    what: (
+      <>
+        Typed parts like <Mono>data-spec</Mono> travel next to the text. This is the hook json-render plugs into (<Mono>pipeJsonRender</Mono>).
+      </>
+    ),
+    without: "A separate channel to send UI data next to the chat text.",
+  },
+  {
+    title: "Agent features, ready when needed",
+    steps: [7],
+    what: (
+      <>
+        Tools, multi-step loops (<Mono>stopWhen</Mono>) and structured output are built in: not needed here, but a tool-calling variant is a small change.
+      </>
+    ),
+    without: "Build the tool loop (call, run, send result, repeat) yourself.",
+  },
+  {
+    title: "Visibility into every call",
+    steps: [6, 7],
+    what: (
+      <>
+        <Mono>onStepEnd</Mono>, token usage and the exact request body: this whole page is built from them.
+      </>
+    ),
+    without: "Wrap and log every HTTP call manually.",
+  },
+];
+
+const ALTERNATIVES: { name: string; is: string; why: string }[] = [
+  {
+    name: "Provider SDK directly (e.g. @google/genai)",
+    is: "The model vendor's own client",
+    why: "One provider only, and no browser side: streaming to React, chat state and the wire format would all be hand-written.",
+  },
+  {
+    name: "LangChain.js / LangGraph.js",
+    is: "Agent orchestration frameworks",
+    why: "Strong for complex multi-agent graphs, but heavier than this POC needs, and json-render's helpers expect the AI SDK stream.",
+  },
+  {
+    name: "Python frameworks (Pydantic AI, LangGraph, Google ADK)",
+    is: "Agent frameworks in Python",
+    why: "The UI must stay React anyway, json-render's server helpers are TypeScript-only, and it means two languages and two servers.",
+  },
+  {
+    name: "CopilotKit",
+    is: "Full in-app copilot framework (AG-UI protocol)",
+    why: "More built in, but more opinionated: its own runtime and structure. For a POC we wanted to see and control every step.",
+  },
+  {
+    name: "A2UI",
+    is: "A UI JSON format / protocol (Google)",
+    why: "Not an LLM toolkit: it still needs something like the AI SDK to call the model. It plays the role json-render plays here.",
+  },
+  {
+    name: "assistant-ui",
+    is: "React components for chat interfaces",
+    why: "A chat UI layer, not an engine; it can even run on top of the AI SDK. Our canvas needed a custom UI anyway.",
+  },
+];
+
+function WhyAiSdk() {
+  return (
+    <section id="why-ai-sdk" className="scroll-mt-6 space-y-6 rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-slate-900/60 to-slate-900/60 p-6">
+      <div className="space-y-2">
+        <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-medium text-emerald-300">Why this stack</span>
+        <h2 className="text-2xl font-semibold text-white">Why the Vercel AI SDK</h2>
+        <p className="max-w-3xl text-[15px] leading-relaxed">
+          The AI SDK is an open-source TypeScript <b>toolkit</b> for AI apps: it handles talking to the model, streaming and chat state, on any Node
+          server. json-render handles the generative-UI part. In this request the SDK did six jobs:
+        </p>
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-2 2xl:grid-cols-3">
+        {SDK_BENEFITS.map((b) => (
+          <div key={b.title} className="flex flex-col rounded-xl border border-white/10 bg-slate-950/60 p-4">
+            <div className="mb-2 flex flex-wrap items-center gap-2">
+              <p className="font-semibold text-white">{b.title}</p>
+              {b.steps.map((n) => (
+                <a key={n} href={`#step-${n}`} className="rounded-md bg-white/10 px-1.5 py-0.5 text-[11px] text-slate-300 hover:bg-white/20">
+                  step {n}
+                </a>
+              ))}
+            </div>
+            <p className="flex-1 text-sm leading-relaxed">{b.what}</p>
+            <p className="mt-3 border-t border-white/10 pt-2 text-xs text-rose-300/80">Without it: {b.without}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="space-y-3">
+        <h3 className="text-lg font-semibold text-white">Why not the alternatives?</h3>
+        <div className="overflow-x-auto rounded-xl border border-white/10">
+          <table className="w-full min-w-[44rem] text-left text-sm">
+            <thead className="bg-slate-900 text-xs text-slate-500">
+              <tr>
+                <th className="px-4 py-2 font-medium">Option</th>
+                <th className="px-4 py-2 font-medium">What it is</th>
+                <th className="px-4 py-2 font-medium">Why not for this POC</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ALTERNATIVES.map((a) => (
+                <tr key={a.name} className="border-t border-white/5 align-top">
+                  <td className="px-4 py-2.5 font-medium text-white">{a.name}</td>
+                  <td className="px-4 py-2.5 text-slate-400">{a.is}</td>
+                  <td className="px-4 py-2.5">{a.why}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-3">
+        <Compare title="Not locked in" tone="emerald">
+          Open source, runs on any Node host (not only Vercel), and models are swappable providers.
+        </Compare>
+        <Compare title="Trade-off: TypeScript" tone="slate">
+          No Python version. A Python backend can still feed <Mono>useChat</Mono>, but the agent would then be a Python library.
+        </Compare>
+        <Compare title="Trade-off: json-render is young" tone="slate">
+          Vercel Labs, pre-1.0 (pinned to 0.21.1): APIs may change between versions.
+        </Compare>
+      </div>
+    </section>
+  );
+}
+
+/* ================================================================== */
 /* Building blocks                                                     */
 /* ================================================================== */
 
@@ -482,19 +663,20 @@ function Mapping({ spec }: { spec: Spec }) {
   );
 }
 
-/** Which step card is currently on screen (drives the timeline highlight). */
-function useActiveStep(count: number) {
-  const [active, setActive] = useState(1);
+/** Which section is currently on screen ("step-3", "why-ai-sdk"…): drives the timeline highlight. */
+function useActiveSection(count: number) {
+  const [active, setActive] = useState("step-1");
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible[0]) setActive(Number(visible[0].target.id.replace("step-", "")));
+        if (visible[0]) setActive(visible[0].target.id);
       },
       { rootMargin: "-10% 0px -60% 0px" },
     );
-    for (let n = 1; n <= count; n++) {
-      const el = document.getElementById(`step-${n}`);
+    const ids = [...Array.from({ length: count }, (_, i) => `step-${i + 1}`), "why-ai-sdk"];
+    for (const id of ids) {
+      const el = document.getElementById(id);
       if (el) observer.observe(el);
     }
     return () => observer.disconnect();
